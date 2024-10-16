@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmx-exporter-service
+spec:
+  selector:
+    app: jmx-exporter  # Match labels from your Deployment
+  ports:
+    - protocol: TCP
+      port: 5556  # Port on the Service
+      targetPort: 5556  # Port your container listens on
